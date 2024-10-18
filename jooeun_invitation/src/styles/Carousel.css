@@ -53,6 +53,10 @@
   box-sizing: border-box;
   padding: 10px 0;
   margin-top: 20px; /* 메인 캐러셀과의 간격 */
+  transform: translateX(-90px); /* 왼쪽으로 10px 이동 */
+  margin-bottom: 100px;
+  
+
 }
 
 .thumbnail-slide {
@@ -60,18 +64,18 @@
   height: 80px; /* 썸네일 높이 조정 */
   opacity: 0.5;
   cursor: pointer;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: opacity 0.3s, transform 0.3s, border 0.3s, box-shadow 0.3s;
   flex-shrink: 0; /* 슬라이드가 줄어들지 않도록 설정 */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.thumbnail-slide-thumb-active {
-  opacity: 1;
+.swiper-slide-thumb-active { /* 활성화된 썸네일 슬라이드 */
+  opacity: 0.8;
   transform: scale(1.1);
   border: 2px solid #007bff;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* 그림자 추가 */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 .thumbnail-image {
@@ -98,5 +102,5 @@
   .thumbnail-slide {
     width: 60px;
     height: 60px;
-  }  
+  }
 }
