@@ -1,0 +1,440 @@
+html { -webkit-text-size-adjust: none; }
+
+body {
+    font-family: 'KoPub Batang';
+    margin: 0 auto;
+    padding: 0;
+    /* overflow: hidden; */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: right;
+    padding: 2rem 0;
+    margin-right: 10px;
+}
+.navbar div a {
+    text-decoration: none;
+    font-size: 0.6rem;
+    color: #696969;
+    /* background-color: #282828; */
+}
+.snap-gallery {
+    width: 45px;
+    height: 20px;
+    text-align: left;
+}
+.way {
+    width: 60px;
+    height: 20px;
+    text-align: left;
+}
+.music {
+    margin-right: 5px;
+    margin-left: 20px;
+    text-align: right;
+    float: right;
+}
+.music img {
+    margin-top: -5px;
+    text-align: right;
+    width: 1.7rem;
+    background-color: #708090;
+}
+.musicInstruction {
+    text-align: right;
+    margin-right: -10px;
+    margin-top: -5px;
+}
+.musicInstruction p {
+    font-size: 10px;
+    color: blue;
+}
+
+/* header */
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 170px;
+    justify-content: center;
+    text-align: center;
+    /* margin-top: 100px; */
+}
+.name-container {
+    display: flex;
+    justify-content: center;
+}
+.name {
+    width: 1.85em;
+    height: 100%;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    /* background-color: red; */
+}
+
+/* body */
+.body {
+    width: 100%;
+}
+.body-top {
+    position: relative;
+    padding-top: 66%;
+    top: 50px;
+    margin-bottom: 50px;
+}
+.body-top img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    height: auto;
+}
+.date {
+    position: relative;
+    top: -50px;
+    /* bottom: -390px; */
+    margin: 0 auto;
+    width: 100%;
+    /* height: 450px; */
+    color: #fff;
+    text-align: center;
+}
+.date h1 {
+    /* font-family: 'Gothic A1', sans-serif; */
+
+    font-family: 'KoPub Batang';
+    font-size: 1.5rem;
+    color: black;
+    font-weight: bold;
+    /* margin-bottom: 100px; */
+}
+.body-middle {
+    /* background-color: pink; */
+    width: 100%;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    /* background-color: black; */
+}
+.main-word {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    text-align: center;
+    /* background-color: brown; */
+}
+.main-word h1 {
+    font-size: 1.5rem;
+    color: black;
+    letter-spacing: 10px;
+    font-weight: bold;
+}
+.main-word p {
+    color: #282828;
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    line-height: 30px;
+    font-weight: 400;
+}
+.body-footer {
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 80px;
+}
+.row1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    line-height: 30px;
+    height: 30px;
+}
+.row2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    line-height: 30px;
+    height: 30px;
+    /* background-color: green; */
+}
+.parents {
+    font-size: 1rem;
+}
+.bulit {
+    font-size: 1rem;
+}
+.row1 p, .row2 p {
+    color: #282828;
+    font-size: 0.7rem;
+    line-height: 0.8;
+    letter-spacing: 4px;
+}
+
+/* our-story */
+.our-story1-img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8;
+}
+.our-story {
+    text-align: center;
+}
+.our-story h1 {
+    margin-top: 40px;
+    font-size: 1.3rem;
+    letter-spacing: 6px;
+    font-weight: bold;
+}
+.our-story p {
+    color: #282828;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-bottom: 100px;
+}
+.our-story2-img, .our-story3-img, .our-story4-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* gallery */
+.gallery-header {
+    margin-bottom: 50px;
+    margin-top: 40px;
+    padding-top: 40px;
+    text-align: center;
+
+}
+.gallery-header h1 {
+    font-size: 1.3rem;
+    color: #696969;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+.gallery-header p {
+    font-size: 0.8rem;
+    color:#282828;
+}
+.list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: -1.2rem 0;
+    box-sizing: border-box;
+    /* background-color: #282828; */
+    padding: 10px;
+    text-align: center;
+}
+li {
+    list-style: none;
+    float: left;
+    width: 33.33%;
+    /* 사진 사이 간격 */
+    margin: 0.2rem;
+}
+.list .box {
+    display: block;
+    padding-bottom: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: grayscale(100%);
+}
+.grid-item:hover .box { opacity: 0.6; }
+
+input[type="checkbox"] { display: none; }
+label[for] { cursor: pointer; }
+
+.lightbox {
+    width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: -webkit-transform .9s ease-out;
+    transition: transform .9s ease-out;
+    background-color: #000;
+    font-size: 0.5rem;
+}
+.lightbox h1 {
+    border-bottom: 1px solid #282828;
+    padding-bottom: 10px;
+    color: #fff;
+}
+.lightbox h2 {
+    margin-top: -47px;
+    text-align: right;
+    margin-right: 20px;
+    font-size: 1.8rem;
+    color: #fff;
+}
+.lightbox img {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transform: translate(-50%, -50%); 
+    -ms-transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%); 
+    max-width: 80%;
+    max-height: 80%;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
+}
+input[type="checkbox"]:checked + .lightbox {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+input[type="checkbox"]:checked ~ .grid { opacity: .125; }
+.lightbox p {
+    width: 100%;
+    font-size: 0.7rem;
+    color: #fff;
+    position: fixed;
+    line-height: 20px;
+}
+label {
+    width: 100%;
+    text-align: center;
+}
+
+/* account */
+.account {
+    margin-bottom: 70px;
+}
+.account-header {
+    margin-bottom: 50px;
+    margin-top: 40px;
+    padding-top: 40px;
+}
+.account-header h1 {
+    font-size: 1.3rem;
+    color: #696969;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+}
+.account-header p {
+    font-size: 0.9rem;
+    /* color: #696969; */
+    text-align: center;
+    font-weight: bold;
+    line-height: 2;
+}
+.account h1 {
+    font-size: 0.9rem;
+    color: #282828;
+    font-weight: bold;
+    text-align: center;
+
+}
+.account p {
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    color: #696969;
+    text-align: center;
+}
+
+/* Kakao map */
+.wayToCome {
+    margin-top: 100px;
+    text-align: center;
+}
+.wayToCome h1 {
+    font-size: 1.2rem;
+    color: #696969;
+    font-weight: bold;
+    letter-spacing: 6px;
+    margin-bottom: 40px;
+}
+.wayToCome h2 {
+    font-size: 1rem;
+}
+.wayToCome h3 {
+    color: grey;
+    font-size: 1rem;
+    line-height: 3;
+}
+.wayToCome p {
+    color: #282828;
+    font-size: 0.7rem;
+}
+.map-container {
+    width: 98%;
+    /* height: 300px; */
+    margin: 0 auto; 
+    margin-bottom: 30px;
+}
+#map {
+    width: 100%; 
+    height: 250px; 
+    margin: 0 auto; 
+    margin-bottom: 30px;
+}
+
+@media (min-width: 800px) {
+    body {
+        width: 750px;
+    }
+    .name {
+        font-size: 1rem;
+    }
+    .main-word p {
+        font-size: 1rem;
+    }
+    .our-story h1 {
+        font-size: 1.4rem;
+    }
+    .our-story p {
+        font-size: 1rem; 
+    }
+    .wayToCome p {
+        font-size: 1rem;
+    }
+    .gallery-pop-wrap {
+        max-width: 800px;
+    }
+    .lightbox p {
+        font-size: 1rem;
+    }
+    .navbar div a {
+        font-size: 0.8rem;
+    }
+    .account h1 {
+        font-size: 1.2rem;
+    }
+    .account p {
+        font-size: 1rem;
+    }
+    #map {
+        height: 350px;
+    }
+    .musicInstruction p {
+        font-size: 0.7rem;
+        margin-top: 8px;
+    }
+}
+
