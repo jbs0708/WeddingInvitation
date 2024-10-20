@@ -18,7 +18,6 @@ const ImageModal = ({ isOpen, onRequestClose, imageSrc, galleryImages, currentIn
       overlayClassName="overlay"
       shouldCloseOnOverlayClick={true} // 외부 클릭 시 닫기 활성화
     >
-      <button onClick={onRequestClose} className="close-button">&times;</button>
       <Swiper
         modules={[Navigation, Zoom, Autoplay]}
         initialSlide={currentIndex}

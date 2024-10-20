@@ -35,7 +35,7 @@ const Root = () => {
   return (
     <div>
       <WeddingPage />
-      <Carousel openModal={openModal} />
+      {/* <Carousel openModal={openModal} /> */}
       <ImageModal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
