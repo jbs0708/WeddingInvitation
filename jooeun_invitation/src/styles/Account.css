@@ -1,0 +1,31 @@
+/* Account.css */
+
+.account-info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.account-item {
+  flex: 1; /* 좌우 동일한 너비를 차지 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 가로 중앙 정렬 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 반응형 디자인: 화면 너비이 768px 이하일 때 세로로 쌓이게 함 */
+@media (max-width: 768px) {
+  .account-info {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .account-item {
+    padding: 10px 0;
+  }
+}

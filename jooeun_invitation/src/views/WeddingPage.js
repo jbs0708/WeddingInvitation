@@ -3,16 +3,41 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import "../styles/WeddingPage.css";
 import KakaoMap from "../components/KakaoMap.js";
 import copy from "../svg/copy.svg";
+import Carousel from "../components/Carousel.js";
+import Account from "../components/Account.js";
+import { useNavigate } from 'react-router-dom';
 
 const WeddingPage = () => {
+  const navigate = useNavigate();
+  
   // 스토리 표시 상태 관리
   const [isStoryVisible, setIsStoryVisible] = useState(false);
+  // 모달
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const openModal = (imageSrc, index) => {
+    setCurrentImage(imageSrc);
+    setCurrentIndex(index);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setCurrentImage('');
+    setCurrentIndex(0);
+  };
 
   const address = "충북 진천군 용석로 184";
 
   // 토글 함수
   const toggleStory = () => {
     setIsStoryVisible(!isStoryVisible);
+  };
+
+  const handleImageClick = () => {
+    navigate('/gallery');
   };
 
   return (
@@ -185,6 +210,10 @@ const WeddingPage = () => {
         </div>
       )}
 
+      {/* 갤러리 */}
+      <h1>갤러리 보러가기</h1>
+      <Carousel onClick={handleImageClick} />
+
       {/* 지도 부분 */}
       <div className="date">
         <h1>
@@ -207,6 +236,14 @@ const WeddingPage = () => {
 
 
       {/* 마음 전하실 곳 */}
+      <div className="account-Box">
+        <span className="line"></span>
+        <span className="text">
+          마음 전하실 곳
+        </span>
+        <span className="line"></span>
+      </div>
+      <Account />
     </div>
   );
 };
