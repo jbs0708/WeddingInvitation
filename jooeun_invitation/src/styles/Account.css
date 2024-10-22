@@ -1,31 +1,134 @@
 /* Account.css */
 
-.account-info {
-  display: flex;
-  flex-direction: row;
+.account-container {
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toggle-button {
+  padding: 10px 20px;
+  background-color: #ff69b4; /* 원하는 색상으로 변경 가능 */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.toggle-button:hover {
+  background-color: #ff85c1;
+}
+
+.accounts-section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .account-item {
-  flex: 1; /* 좌우 동일한 너비를 차지 */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* 가로 중앙 정렬 */
-  text-align: center; /* 텍스트 가운데 정렬 */
-  padding: 20px;
-  box-sizing: border-box;
+  flex: 1 1 300px; /* 최소 너비 설정 */
+  max-width: 500px;
 }
 
-/* 반응형 디자인: 화면 너비이 768px 이하일 때 세로로 쌓이게 함 */
+.account-header {
+  font-size: 1.2rem;
+  color: #ff69b4;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.account-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.account-table th,
+.account-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.account-table th {
+  background-color: #ffebf0;
+  color: #ff69b4;
+}
+
+.copyable-account {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: #000; /* 검은색으로 변경 */
+  text-decoration: none; /* 밑줄 제거 */
+}
+
+.copyable-account:hover {
+  color: #555; /* 호버 시 색상 변경 (선택 사항) */
+}
+
+.copy-icon {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.kakao-pay-button {
+  padding: 5px 10px;
+  background-color: #fee500; /* 카카오페이 색상 */
+  border: none;
+  border-radius: 4px;
+  color: #3c1e1e;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.kakao-pay-button:hover {
+  background-color: #fdd835;
+}
+
+/* 반응형 디자인 */
 @media (max-width: 768px) {
-  .account-info {
-    flex-direction: column;
+  .account-container {
     padding: 10px;
   }
 
+  .toggle-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .accounts-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .account-item {
-    padding: 10px 0;
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .copyable-account {
+    font-size: 0.9rem;
+  }
+
+  .copy-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .kakao-pay-button {
+    padding: 4px 8px;
+    font-size: 0.9rem;
   }
 }

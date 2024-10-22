@@ -23,7 +23,7 @@
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 항상 3열 유지 */
   gap: 10px;
   margin-top: 60px; /* 뒤로가기 버튼 공간 확보 */
 }
@@ -64,8 +64,8 @@
   bottom: auto;
   transform: translate(-50%, -50%);
   padding: 0;
-  width: 75vw; /* 화면 너비의 90% */
-  height: 90vh; /* 화면 높이의 90% */
+  width: 75vw; /* 화면 너비의 75% */
+  height: 70vh; /* 화면 높이의 90% */
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -78,17 +78,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: transparent;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 1001;
 }
 
 .modal-image {
@@ -110,27 +99,20 @@
 
 .swiper-slide img {
   max-width: 100%;
-  max-height: 100%;
   object-fit: contain;
 }
 
 /* Swiper 좌우 버튼 스타일 */
 .swiper-button-prev,
 .swiper-button-next {
-  color: #434242; /* 버튼 색상 조정 */
+  color: #f1eadd; /* 버튼 색상 조정 */
   width: 40px;
   height: 60px;
-  /* border-radius: 50%; */
-  background-color: rgba(255, 255, 255, 0.7);
+  /* background-color: rgba(255, 255, 255, 0.7); */
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background-color: rgba(255, 255, 255, 1);
-}
-
-/* 반응형 디자인 */
-@media (max-width: 768px) {
+/* 반응형 디자인 제거 */
+/* @media (max-width: 768px) {
   .image-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -152,4 +134,4 @@
     width: 95vw;
     height: 95vh;
   }
-}
+} */

@@ -85,11 +85,9 @@ const WeddingPage = () => {
 
       {/* 스토리 토글 버튼 (상단) */}
       <button className="toggle-story-button" onClick={toggleStory}>
-        <span className="line"></span>
-        <span className="button-text">
+        <span>
           {isStoryVisible ? "우리들의 스토리 접기" : "우리들의 스토리 보기"}
         </span>
-        <span className="line"></span>
       </button>
 
       {isStoryVisible && (

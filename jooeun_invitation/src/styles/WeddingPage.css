@@ -6,7 +6,7 @@ body {
     font-family: 'KoPub Batang';
     margin: 0 auto;
     padding: 0;
-    /* overflow: hidden; */
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -20,6 +20,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px; /* 하단 여백 추가 */
+    overflow-x: hidden;
 }
 
 .body-top {
@@ -119,7 +120,6 @@ body {
     width: 100%;
     max-width: 800px;
     margin: 20px auto; /* 상단과 하단에 여백 추가 */
-    padding: 0 10px;
 }
 
 .our-story1-img,
@@ -158,36 +158,17 @@ body {
 /* toggle button */
 .toggle-story-button {
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: center;
-    margin: 40px auto;
     padding: 10px 20px;
-    background: none; /* 배경색 제거 */
-    border: none; /* 테두리 제거 */
+    background-color: #ff69b4; /* 원하는 색상으로 변경 가능 */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
     cursor: pointer;
-    position: relative;
-    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
-}
-
-.toggle-story-button .line {
-    flex: 1;
-    height: 1px; /* 선의 두께 */
-    background-color: #ff69b4; /* 선의 색상 핑크 */
-    margin: 0 10px; /* 텍스트와 선 사이 간격 */
-}
-
-.toggle-story-button .button-text {
-    color: #ff69b4; /* 텍스트 색상 핑크 */
-    font-size: 24px;
-}
-
-.toggle-story-button:hover .line {
-    background-color: #ff85c1; /* 호버 시 선 색상 변경 */
-}
-
-.toggle-story-button:hover .button-text {
-    color: #ff85c1; /* 호버 시 텍스트 색상 변경 */
+    transition: background-color 0.3s ease;
+    margin-bottom: 60px;
 }
 
 .account-Box {
@@ -232,7 +213,8 @@ body {
 /* 반응형 디자인 */
 @media (min-width: 800px) {
     body {
-        width: 750px;
+        max-width: 800px;
+        margin: 0 auto;
     }
     .main-word p {
         font-size: 1rem;
