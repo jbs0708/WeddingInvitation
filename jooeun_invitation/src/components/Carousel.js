@@ -1,13 +1,12 @@
 // src/components/Carousel.js
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Thumbs } from 'swiper/modules';
+import { Autoplay, Thumbs } from 'swiper/modules'; // Swiper에서 직접 모듈 가져오기
 import 'swiper/css';
-import 'swiper/css/thumbs';
 import '../styles/Carousel.css';
 
 const Carousel = () => {
-  const galleryImages = Array.from({ length: 37 }, (_, i) => `/assets/picture/weddingPic_${i + 1}.jpg`);
+  const galleryImages = Array.from({ length: 18 }, (_, i) => `/assets/picture/weddingPic_${i + 1}.jpg`);
 
   // 현재 슬라이드 인덱스 관리
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,13 +17,13 @@ const Carousel = () => {
       <Swiper
         modules={[Autoplay, Thumbs]}
         spaceBetween={10}
-        slidesPerView={1.7}
+        slidesPerView={1}
         centeredSlides={true}
         initialSlide={1}
-        loop={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
+        // autoHeight={true}
         className="mySwiper mainSwiper"
-        onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)} // 슬라이드 변경 시 현재 인덱스 업데이트
+        onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
       >
         {galleryImages.map((image, index) => (
           <SwiperSlide key={index}>

@@ -5,6 +5,7 @@ import KakaoMap from "../components/KakaoMap.js";
 import copy from "../svg/copy.svg";
 import Carousel from "../components/Carousel.js";
 import Account from "../components/Account.js";
+import Calendar from "../components/Calendar.js";
 import { useNavigate } from 'react-router-dom';
 
 const WeddingPage = () => {
@@ -117,7 +118,7 @@ const WeddingPage = () => {
 
           <img
             className="our-story2-img"
-            src="../../assets/picture/weddingPic_3.jpg"
+            src="../../assets/picture/storyPic_1.jpg"
             alt="story2"
           />
 
@@ -139,7 +140,7 @@ const WeddingPage = () => {
 
           <img
             className="our-story3-img"
-            src="../../assets/picture/weddingPic_4.jpg"
+            src="../../assets/picture/weddingPic_18.jpg"
             alt="story3"
           />
 
@@ -163,7 +164,7 @@ const WeddingPage = () => {
 
           <img
             className="our-story4-img"
-            src="../../assets/picture/weddingPic_5.jpg"
+            src="../../assets/picture/storyPic_2.jpg"
             alt="story4"
           />
 
@@ -183,7 +184,7 @@ const WeddingPage = () => {
 
           <img
             className="our-story5-img"
-            src="../../assets/picture/weddingPic_6.jpg"
+            src="../../assets/picture/storyPic_3.jpg"
             alt="story5"
           />
 
@@ -210,6 +211,12 @@ const WeddingPage = () => {
           </button> */}
         </div>
       {/* )} */}
+
+      {/* 달력 */}
+      <div className="section-title">
+        <h1>Calendar</h1>
+      </div>
+      <Calendar />
 
       {/* 갤러리 */}
       <div className="section-title">

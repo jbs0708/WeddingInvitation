@@ -160,7 +160,7 @@ body {
     height: auto;
     display: block;
     margin: 20px auto; /* 이미지 간 간격 조정 */
-    opacity: 0.8;
+    /* opacity: 0.9; */
 }
 
 .our-story {
