@@ -56,7 +56,7 @@ const WeddingPage = () => {
           <p>
             문과감성충만 이과생과 <br />
             이과감성가득 문과생이 <br />
-            사랑이라는 통역을통해
+            사랑이라는 통역을 통해
             <br />
             하나됨을 이루려고합니다
             <br />
@@ -84,15 +84,18 @@ const WeddingPage = () => {
       </div>
 
       {/* 스토리 토글 버튼 (상단) */}
-      <button className="toggle-story-button" onClick={toggleStory}>
+      {/* <button className="toggle-story-button" onClick={toggleStory}>
         <span>
           {isStoryVisible ? "우리들의 스토리 접기" : "우리들의 스토리 보기"}
         </span>
-      </button>
+      </button> */}
 
-      {isStoryVisible && (
+      {/* {isStoryVisible && ( */}
         <div className="our-story-section">
           {/* 스토리 내용 */}
+          <div className="section-title">
+            <h1>Our Story</h1>
+          </div>
           <img
             className="our-story1-img"
             src="../../assets/picture/weddingPic_2.jpg"
@@ -198,21 +201,26 @@ const WeddingPage = () => {
           </div>
 
           {/* 스토리 토글 버튼 (하단) */}
-          <button className="toggle-story-button" onClick={toggleStory}>
+          {/* <button className="toggle-story-button" onClick={toggleStory}>
             <span className="line"></span>
             <span className="button-text">
               우리들의 스토리 접기
             </span>
             <span className="line"></span>
-          </button>
+          </button> */}
         </div>
-      )}
+      {/* )} */}
 
       {/* 갤러리 */}
-      <h1>갤러리 보러가기</h1>
-      <Carousel onClick={handleImageClick} />
+      <div className="section-title">
+        <h1>Gallery</h1>
+      </div>
+      <Carousel />
 
       {/* 지도 부분 */}
+      <div className="section-title">
+        <h1>Location</h1>
+      </div>
       <div className="date">
         <h1>
           2024. 12. 28
@@ -228,18 +236,19 @@ const WeddingPage = () => {
       >
         <button className="addressButton">
           <img src={copy} alt="icon" style={{ width: '20px', marginRight: '8px' }} />
-          충북 진천군 용석로 184
+          주소복사
         </button>
       </CopyToClipboard>
 
 
       {/* 마음 전하실 곳 */}
       <div className="account-Box">
-        <span className="line"></span>
-        <span className="text">
+        <div className="section-title">
+          <h1>Information</h1>
+        </div>
+        <p className="text">
           마음 전하실 곳
-        </span>
-        <span className="line"></span>
+        </p>
       </div>
       <Account />
     </div>

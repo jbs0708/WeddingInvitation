@@ -1,19 +1,16 @@
 // src/components/Carousel.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Thumbs } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/thumbs';
 import '../styles/Carousel.css';
-import { useNavigate } from 'react-router-dom';
 
 const Carousel = () => {
-  const navigate = useNavigate();
   const galleryImages = Array.from({ length: 37 }, (_, i) => `/assets/picture/weddingPic_${i + 1}.jpg`);
 
-  const handleImageClick = () => {
-    navigate('/gallery');
-  };
+  // 현재 슬라이드 인덱스 관리
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <div className="carousel-container">
@@ -27,6 +24,7 @@ const Carousel = () => {
         loop={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         className="mySwiper mainSwiper"
+        onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)} // 슬라이드 변경 시 현재 인덱스 업데이트
       >
         {galleryImages.map((image, index) => (
           <SwiperSlide key={index}>
@@ -35,13 +33,24 @@ const Carousel = () => {
                 src={image}
                 alt={`Wedding Pic ${index + 1}`}
                 className="carousel-image"
-                onClick={handleImageClick} // 갤러리 페이지로 이동
                 loading="lazy"
               />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* 현재 슬라이드 위치를 나타내는 직사각형 인디케이터 */}
+      <div className="carousel-indicators">
+        <div className="line-indicator">
+          <div
+            className="current-indicator"
+            style={{
+              left: `${(currentIndex / galleryImages.length) * 100}%`,
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };
