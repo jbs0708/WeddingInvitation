@@ -71,7 +71,7 @@ const WeddingPage = () => {
           <span className="parents">안경훈</span>
           <span className="bulit">・</span>
           <span className="parents">정명희</span>
-          <p>의 장남</p>
+          <p>의 아들</p>
           <span className="groom">성균</span>
         </div>
 
@@ -79,7 +79,7 @@ const WeddingPage = () => {
           <span className="parents">김&nbsp;&nbsp;&nbsp;인</span>
           <span className="bulit">・</span>
           <span className="parents">김은진</span>
-          <p>의 장녀</p>
+          <p>의 &nbsp;딸&nbsp;</p>
           <span className="groom">주은</span>
         </div>
       </div>
@@ -228,22 +228,25 @@ const WeddingPage = () => {
       <div className="section-title">
         <h1>Location</h1>
       </div>
-      <div className="date">
+      {/* <div className="date">
         <h1>
           2024. 12. 28
           <br />
           토요일 오전11시 울림교회
         </h1>
-      </div>
+      </div> */}
       <KakaoMap />
-      <h3>찾아 오시는 길</h3>
+      <div className="address">
+        <h3>울림교회 예배당</h3>
+        <h3>충북 진천군 용석로 184</h3>
+      </div>
       <CopyToClipboard 
         text={address} 
         onCopy={() => alert('주소가 클립보드에 복사되었습니다!')}
       >
-        <button className="addressButton">
+        <button className="button">
           <img src={copy} alt="icon" style={{ width: '20px', marginRight: '8px' }} />
-          주소복사
+          복사하기
         </button>
       </CopyToClipboard>
 

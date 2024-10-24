@@ -1,6 +1,6 @@
 // Account.js
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import '../styles/Account.css';
 import {
   GROOM_NAME,
@@ -9,199 +9,174 @@ import {
   GROOM_FATHER_ACCOUNT_NUMBER,
   GROOM_MOTHER_NAME,
   GROOM_MOTHER_ACCOUNT_NUMBER,
+  GROOM_KAKAOPAY,
+  GROOM_FATHER_KAKAOPAY,
+  GROOM_MOTHER_KAKAOPAY,
   BRIDE_NAME,
   BRIDE_ACCOUNT_NUMBER,
   BRIDE_FATHER_NAME,
   BRIDE_FATHER_ACCOUNT_NUMBER,
   BRIDE_MOTHER_NAME,
-  BRIDE_MOTHER_ACCOUNT_NUMBER
+  BRIDE_MOTHER_ACCOUNT_NUMBER,
+  BRIDE_KAKAOPAY,
+  BRIDE_FATHER_KAKAOPAY,
+  BRIDE_MOTHER_KAKAOPAY
 } from '../config.js';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import copyIcon from '../svg/copy.svg'; // 복사 아이콘 경로 확인
+import up from '../svg/up.svg';
+import down from '../svg/down.svg';
+import kakaoPay from '../icon/KakaoPay.jpg';
 
 const Account = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isGroomOpen, setIsGroomOpen] = useState(false);
+  const [isBrideOpen, setIsBrideOpen] = useState(false);
 
-  const toggleAccounts = () => {
-    setIsOpen(!isOpen);
+  // 드롭다운 외부 클릭 시 닫기
+  const groomRef = useRef(null);
+  const brideRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (groomRef.current && !groomRef.current.contains(event.target)) {
+        setIsGroomOpen(false);
+      }
+      if (brideRef.current && !brideRef.current.contains(event.target)) {
+        setIsBrideOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const toggleGroom = () => {
+    setIsGroomOpen((prev) => !prev);
+  };
+
+  const toggleBride = () => {
+    setIsBrideOpen((prev) => !prev);
   };
 
   const handleCopy = () => {
-    // 사용자에게 피드백을 제공 (토스트 메시지 등으로 개선 가능)
     alert('계좌번호가 클립보드에 복사되었습니다!');
   };
 
-  const handleKakaoPay = () => {
-    // 카카오페이 송금 로직을 여기에 추가하세요.
-    // 예시: window.open(`https://kakaopay.com/pay?name=${encodeURIComponent(name)}`, '_blank');
-    window.open('https://qr.kakaopay.com/FXjb7CHoN');
+  const handleKakaoPay = (kakaoPayUrl) => {
+    if (kakaoPayUrl.trim() !== "") {
+      window.open(kakaoPayUrl);
+    } else {
+      alert('해당 계좌의 카카오페이 정보가 없습니다.');
+    }
   };
+
+  const groomAccounts = [
+    { name: GROOM_NAME, accountNumber: GROOM_ACCOUNT_NUMBER, kakaoPay: GROOM_KAKAOPAY },
+    { name: GROOM_MOTHER_NAME, accountNumber: GROOM_MOTHER_ACCOUNT_NUMBER, kakaoPay: GROOM_MOTHER_KAKAOPAY },
+    { name: GROOM_FATHER_NAME, accountNumber: GROOM_FATHER_ACCOUNT_NUMBER, kakaoPay: GROOM_FATHER_KAKAOPAY }
+  ];
+
+  const brideAccounts = [
+    { name: BRIDE_NAME, accountNumber: BRIDE_ACCOUNT_NUMBER, kakaoPay: BRIDE_KAKAOPAY },
+    { name: BRIDE_FATHER_NAME, accountNumber: BRIDE_FATHER_ACCOUNT_NUMBER, kakaoPay: BRIDE_FATHER_KAKAOPAY },
+    { name: BRIDE_MOTHER_NAME, accountNumber: BRIDE_MOTHER_ACCOUNT_NUMBER, kakaoPay: BRIDE_MOTHER_KAKAOPAY },
+  ];
+
+  // 필터링된 계좌 목록
+  const filteredGroomAccounts = groomAccounts.filter(account => account.name.trim() !== "");
+  const filteredBrideAccounts = brideAccounts.filter(account => account.name.trim() !== "");
 
   return (
     <div className="account-container">
-      {/* 계좌번호 확인하기 버튼 */}
-      <button className="toggle-button" onClick={toggleAccounts}>
-        계좌번호 확인하기
-      </button>
-
-      {/* 계좌 정보 섹션 */}
-      {isOpen && (
-        <div className="accounts-section">
-          {/* 신랑측 */}
-          <div className="account-item">
-            <h3 className="account-header">신랑측</h3>
-            <table className="account-table">
-              <thead>
-                <tr>
-                  <th>이름</th>
-                  <th>은행 및 계좌번호</th>
-                  <th>송금</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* 신랑 */}
-                <tr>
-                  <td>{GROOM_NAME}</td>
-                  <td>
-                    <CopyToClipboard text={GROOM_ACCOUNT_NUMBER.split(' ')[1]} onCopy={handleCopy}>
-                      <span className="copyable-account">
-                        {`${GROOM_ACCOUNT_NUMBER.split(' ')[0]} ${GROOM_ACCOUNT_NUMBER.split(' ')[1]}`}
-                        <img src={copyIcon} alt="복사 아이콘" className="copy-icon" />
-                      </span>
-                    </CopyToClipboard>
-                  </td>
-                  <td>
-                    <button
-                      className="kakao-pay-button"
-                      onClick={() => handleKakaoPay()}
-                    >
-                      카카오페이 송금
-                    </button>
-                  </td>
-                </tr>
-                {/* 신랑 아버지 */}
-                <tr>
-                  <td>{GROOM_FATHER_NAME}</td>
-                  <td>
-                    <CopyToClipboard text={GROOM_FATHER_ACCOUNT_NUMBER.split(' ')[1]} onCopy={handleCopy}>
-                      <span className="copyable-account">
-                        {`${GROOM_FATHER_ACCOUNT_NUMBER.split(' ')[0]} ${GROOM_FATHER_ACCOUNT_NUMBER.split(' ')[1]}`}
-                        <img src={copyIcon} alt="복사 아이콘" className="copy-icon" />
-                      </span>
-                    </CopyToClipboard>
-                  </td>
-                  <td>
-                    <button
-                      className="kakao-pay-button"
-                      onClick={() => handleKakaoPay(GROOM_FATHER_NAME)}
-                    >
-                      카카오페이 송금
-                    </button>
-                  </td>
-                </tr>
-                {/* 신랑 어머니 */}
-                <tr>
-                  <td>{GROOM_MOTHER_NAME}</td>
-                  <td>
-                    <CopyToClipboard text={GROOM_MOTHER_ACCOUNT_NUMBER.split(' ')[1]} onCopy={handleCopy}>
-                      <span className="copyable-account">
-                        {`${GROOM_MOTHER_ACCOUNT_NUMBER.split(' ')[0]} ${GROOM_MOTHER_ACCOUNT_NUMBER.split(' ')[1]}`}
-                        <img src={copyIcon} alt="복사 아이콘" className="copy-icon" />
-                      </span>
-                    </CopyToClipboard>
-                  </td>
-                  <td>
-                    <button
-                      className="kakao-pay-button"
-                      onClick={() => handleKakaoPay(GROOM_MOTHER_NAME)}
-                    >
-                      카카오페이 송금
-                    </button>
-                  </td>
-                </tr>
-                {/* 필요 시 추가 계좌 정보 */}
-              </tbody>
-            </table>
-          </div>
-
-          {/* 신부측 */}
-          <div className="account-item">
-            <h3 className="account-header">신부측</h3>
-            <table className="account-table">
-              <thead>
-                <tr>
-                  <th>이름</th>
-                  <th>은행 및 계좌번호</th>
-                  <th>송금</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* 신부 */}
-                <tr>
-                  <td>{BRIDE_NAME}</td>
-                  <td>
-                    <CopyToClipboard text={BRIDE_ACCOUNT_NUMBER.split(' ')[1]} onCopy={handleCopy}>
-                      <span className="copyable-account">
-                        {`${BRIDE_ACCOUNT_NUMBER.split(' ')[0]} ${BRIDE_ACCOUNT_NUMBER.split(' ')[1]}`}
-                        <img src={copyIcon} alt="복사 아이콘" className="copy-icon" />
-                      </span>
-                    </CopyToClipboard>
-                  </td>
-                  <td>
-                    <button
-                      className="kakao-pay-button"
-                      onClick={() => handleKakaoPay(BRIDE_NAME)}
-                    >
-                      카카오페이 송금
-                    </button>
-                  </td>
-                </tr>
-                {/* 신부 아버지 */}
-                <tr>
-                  <td>{BRIDE_FATHER_NAME}</td>
-                  <td>
-                    <CopyToClipboard text={BRIDE_FATHER_ACCOUNT_NUMBER.split(' ')[1]} onCopy={handleCopy}>
-                      <span className="copyable-account">
-                        {`${BRIDE_FATHER_ACCOUNT_NUMBER.split(' ')[0]} ${BRIDE_FATHER_ACCOUNT_NUMBER.split(' ')[1]}`}
-                        <img src={copyIcon} alt="복사 아이콘" className="copy-icon" />
-                      </span>
-                    </CopyToClipboard>
-                  </td>
-                  <td>
-                    <button
-                      className="kakao-pay-button"
-                      onClick={() => handleKakaoPay(BRIDE_FATHER_NAME)}
-                    >
-                      카카오페이 송금
-                    </button>
-                  </td>
-                </tr>
-                {/* 신부 어머니 */}
-                <tr>
-                  <td>{BRIDE_MOTHER_NAME}</td>
-                  <td>
-                    <CopyToClipboard text={BRIDE_MOTHER_ACCOUNT_NUMBER.split(' ')[1]} onCopy={handleCopy}>
-                      <span className="copyable-account">
-                        {`${BRIDE_MOTHER_ACCOUNT_NUMBER.split(' ')[0]} ${BRIDE_MOTHER_ACCOUNT_NUMBER.split(' ')[1]}`}
-                        <img src={copyIcon} alt="복사 아이콘" className="copy-icon" />
-                      </span>
-                    </CopyToClipboard>
-                  </td>
-                  <td>
-                    <button
-                      className="kakao-pay-button"
-                      onClick={() => handleKakaoPay(BRIDE_MOTHER_NAME)}
-                    >
-                      카카오페이 송금
-                    </button>
-                  </td>
-                </tr>
-                {/* 필요 시 추가 계좌 정보 */}
-              </tbody>
-            </table>
-          </div>
+      {/* 신랑측 */}
+      <div className="account-section" ref={groomRef}>
+        <button
+          type="button" // 버튼 타입 명시
+          className={`account-toggle-button ${isGroomOpen ? 'open' : ''}`}
+          onClick={toggleGroom}
+          aria-expanded={isGroomOpen}
+        >
+          <span className="button-text">신랑측 계좌 안내</span>
+          <img
+            src={isGroomOpen ? up : down}
+            alt="toggle"
+            className="toggle-icon"
+          />
+        </button>
+        <div className={`accounts-list ${isGroomOpen ? 'open' : 'closed'}`}>
+          {filteredGroomAccounts.map((account, index) => (
+            <div className="account-item" key={index}>
+              {/* 첫 번째 div: 이름과 계좌번호 */}
+              <div className="account-info">
+                <span className="account-name">{account.name}</span>
+                <span className="account-number">{account.accountNumber}</span>
+              </div>
+              {/* 두 번째 div: 카카오페이 버튼과 복사 버튼 */}
+              <div className="account-actions">
+                <button
+                  type="button" // 버튼 타입 명시
+                  className="kakao-pay-button"
+                  onClick={() => handleKakaoPay(account.kakaoPay)}
+                >
+                  <img src={kakaoPay} alt="카카오페이" className="kakaoPay-icon" />
+                </button>
+                <CopyToClipboard text={account.accountNumber} onCopy={handleCopy}>
+                  <button type="button" className="copy-button">
+                    <img src={copyIcon} alt="복사" className="copy-icon" />
+                    복사
+                  </button>
+                </CopyToClipboard>
+              </div>
+            </div>
+          ))}
         </div>
-      )}
+      </div>
+
+      {/* 신부측 */}
+      <div className="account-section" ref={brideRef}>
+        <button
+          type="button" // 버튼 타입 명시
+          className={`account-toggle-button ${isBrideOpen ? 'open' : ''}`}
+          onClick={toggleBride}
+          aria-expanded={isBrideOpen}
+        >
+          <span className="button-text">신부측 계좌 안내</span>
+          <img
+            src={isBrideOpen ? up : down}
+            alt="toggle"
+            className="toggle-icon"
+          />
+        </button>
+        <div className={`accounts-list ${isBrideOpen ? 'open' : 'closed'}`}>
+          {filteredBrideAccounts.map((account, index) => (
+            <div className="account-item" key={index}>
+              {/* 첫 번째 div: 이름과 계좌번호 */}
+              <div className="account-info">
+                <span className="account-name">{account.name}</span>
+                <span className="account-number">{account.accountNumber}</span>
+              </div>
+              {/* 두 번째 div: 카카오페이 버튼과 복사 버튼 */}
+              <div className="account-actions">
+                <button
+                  type="button" // 버튼 타입 명시
+                  className="kakao-pay-button"
+                  onClick={() => handleKakaoPay(account.kakaoPay)}
+                >
+                  <img src={kakaoPay} alt="카카오페이" className="kakaoPay-icon" />
+                </button>
+                <CopyToClipboard text={account.accountNumber} onCopy={handleCopy}>
+                  <button type="button" className="copy-button">
+                    <img src={copyIcon} alt="복사" className="copy-icon" />
+                    복사
+                  </button>
+                </CopyToClipboard>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
