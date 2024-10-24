@@ -3,6 +3,12 @@ html {
 }
 
 @font-face {
+    font-family: "NanumSquareRoundB";
+    font-weight: normal;
+    src: url("../fonts/NanumSquareRoundB.ttf") format("truetype");
+}
+
+@font-face {
     font-family: "Golden Plains";
     font-weight: normal;
     src: url("../fonts/Golden Plains.ttf") format("truetype");
@@ -18,6 +24,32 @@ html {
     font-family: "MaruBuri-SemiBold";
     font-weight: normal;
     src: url("../fonts/MaruBuri-SemiBold.ttf") format("truetype");
+}
+
+/* 고정 Navbar 스타일 */
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* 원하는 높이로 조절 가능 */
+    background-color: rgba(255, 255, 255, 0.8); /* 흰색 반투명 */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* 다른 요소들보다 위에 표시되도록 */
+}
+
+/* 재생/정지 버튼 스타일 */
+.play-pause-button {
+    background: none;
+    border: none;
+    margin-top: 5px;
+}
+
+.body {
+    padding-top: 1px;
 }
 
 body {
@@ -71,7 +103,7 @@ body {
 }
 
 .date h1 {
-    font-family: 'KoPub Batang';
+    font-family: 'NanumSquareRoundB';
     font-size: 1.5rem;
     color: black;
     font-weight: bold;
@@ -225,14 +257,16 @@ body {
     margin: 10px 3%; /* 텍스트와 선 사이 간격 */
 }
 
-.account-Box .text {
+.account-Box .info-text {
     font-size: 24px;
+    font-family: 'NanumSquareRoundB';
 }
 
 .address {
     width: 90%;
     text-align: center;
     line-height: 0.7;
+    font-family: 'NanumSquareRoundB';
 }
 
 .button {

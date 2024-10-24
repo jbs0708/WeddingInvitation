@@ -1,5 +1,5 @@
 // src/components/Carousel.js
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Thumbs } from 'swiper/modules'; // Swiper에서 직접 모듈 가져오기
 import 'swiper/css';
@@ -11,16 +11,27 @@ const Carousel = () => {
   // 현재 슬라이드 인덱스 관리
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Swiper 인스턴스 참조
+  const swiperRef = useRef(null);
+
+  // 점 클릭 시 해당 슬라이드로 이동하는 함수
+  const handleDotClick = (index) => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideToLoop(index);
+    }
+  };
+
   return (
     <div className="carousel-container">
       {/* 메인 캐러셀 */}
       <Swiper
+        ref={swiperRef}
         modules={[Autoplay, Thumbs]}
         spaceBetween={10}
         slidesPerView={1}
         centeredSlides={true}
         initialSlide={1}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        // autoplay={{ delay: 2500, disableOnInteraction: false }}
         // autoHeight={true}
         className="mySwiper mainSwiper"
         onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
@@ -39,16 +50,15 @@ const Carousel = () => {
         ))}
       </Swiper>
 
-      {/* 현재 슬라이드 위치를 나타내는 직사각형 인디케이터 */}
-      <div className="carousel-indicators">
-        <div className="line-indicator">
+      {/* 점(Point) 인디케이터 */}
+      <div className="carousel-dots">
+        {galleryImages.map((_, index) => (
           <div
-            className="current-indicator"
-            style={{
-              left: `${(currentIndex / galleryImages.length) * 100}%`,
-            }}
+            key={index}
+            className={`dot ${currentIndex === index ? 'active' : ''}`}
+            onClick={() => handleDotClick(index)}
           />
-        </div>
+        ))}
       </div>
     </div>
   );

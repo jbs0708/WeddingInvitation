@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "NanumSquareRoundB";
+  font-weight: normal;
+  src: url("../fonts/NanumSquareRoundB.ttf") format("truetype");
+}
+
 .calendar-container {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -70,4 +76,5 @@
 
 .d-day {
   margin: 50px 0;
+  font-family: 'NanumSquareRoundB';
 }

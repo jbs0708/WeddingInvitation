@@ -61,27 +61,28 @@
   margin: auto; /* 자동 마진으로 중앙 정렬 보장 */
 }
 
-/* 캐러셀 인디케이터 스타일 */
-.carousel-indicators {
+/* 점 인디케이터 스타일 */
+.carousel-dots {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-}
-
-.line-indicator {
-  position: relative;
-  width: 85%;
-  height: 5px;
-  background-color: rgba(189, 196, 203, 0.686);
+  gap: 10px; /* 점 간의 간격 */
+  width: 100%;
+  max-width: 200px; /* 필요에 따라 조정 */
   margin: 0 auto;
 }
 
-.current-indicator {
-  position: absolute;
-  top: -2px;
-  width: 35px;
-  height: 10px;
-  background-color: #444444;
-  transition: left 0.3s ease;
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(194, 201, 207, 0.686);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #D08C95;
 }
 
 /* 반응형 디자인 */
@@ -93,5 +94,10 @@
   .thumbnail-slide {
     width: 60px;
     height: 60px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
   }
 }

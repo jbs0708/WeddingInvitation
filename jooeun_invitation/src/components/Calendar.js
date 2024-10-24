@@ -27,11 +27,9 @@ const Calendar = () => {
 
       if (isWedding) {
         calendarDays.push(
-          <>
-            <div key={i} className="calendar-cell wedding-day">
-              <span>{i}</span>
-            </div>
-          </>
+          <div key={i} className="calendar-cell wedding-day">
+            <span>{i}</span>
+          </div>
         );
       } else {
         calendarDays.push(
@@ -69,7 +67,7 @@ const Calendar = () => {
       <div className="calendar-grid">{renderCalendar()}</div>
       <div className="d-day">
         <p>
-          성균 <img src={heartIcon} alt="heart" style={{ width: '16px', height: '16px' }} /> 주은의 결혼식이 <span style={{ color: '#D08C95', fontWeight: 'bold' }}> {daysLeft}</span>일 남았습니다.
+          성균 <img src={heartIcon} alt="heart" style={{ width: '20px', height: '16px' }} /> 주은의 결혼식이 <span style={{ color: '#D08C95', fontWeight: 'bold' }}> {daysLeft}</span>일 남았습니다.
         </p>
       </div>
     </div>

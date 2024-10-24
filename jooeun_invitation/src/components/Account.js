@@ -32,25 +32,8 @@ const Account = () => {
   const [isGroomOpen, setIsGroomOpen] = useState(false);
   const [isBrideOpen, setIsBrideOpen] = useState(false);
 
-  // 드롭다운 외부 클릭 시 닫기
   const groomRef = useRef(null);
   const brideRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (groomRef.current && !groomRef.current.contains(event.target)) {
-        setIsGroomOpen(false);
-      }
-      if (brideRef.current && !brideRef.current.contains(event.target)) {
-        setIsBrideOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   const toggleGroom = () => {
     setIsGroomOpen((prev) => !prev);
@@ -61,7 +44,7 @@ const Account = () => {
   };
 
   const handleCopy = () => {
-    alert('계좌번호가 클립보드에 복사되었습니다!');
+    // alert('계좌번호가 클립보드에 복사되었습니다!');
   };
 
   const handleKakaoPay = (kakaoPayUrl) => {
@@ -100,7 +83,7 @@ const Account = () => {
         >
           <span className="button-text">신랑측 계좌 안내</span>
           <img
-            src={isGroomOpen ? up : down}
+            src={isGroomOpen=='open' ? up : down}
             alt="toggle"
             className="toggle-icon"
           />
@@ -144,7 +127,7 @@ const Account = () => {
         >
           <span className="button-text">신부측 계좌 안내</span>
           <img
-            src={isBrideOpen ? up : down}
+            src={isBrideOpen=='open' ? up : down}
             alt="toggle"
             className="toggle-icon"
           />

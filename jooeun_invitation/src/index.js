@@ -1,6 +1,6 @@
 // index.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client'; // Import createRoot from react-dom/client
 import "./styles/WeddingPage.css";
 import WeddingPage from './views/WeddingPage.js';
 import 'swiper/css';
@@ -23,11 +23,17 @@ const Root = () => {
   );
 };
 
-ReactDOM.render(
+// Select the root DOM node
+const container = document.getElementById('root');
+
+// Create a root.
+const root = createRoot(container);
+
+// Initial render
+root.render(
   <React.StrictMode>
     <Router>
       <Root />
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

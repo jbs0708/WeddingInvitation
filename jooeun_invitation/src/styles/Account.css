@@ -96,8 +96,8 @@
 
 .account-info {
   display: flex;
-  flex-direction: column; /* 세로 방향으로 정렬 */
-  justify-content: space-around; /* 상단과 하단에 배치 */
+  flex-direction: column;
+  justify-content: space-between;
   margin-left: 10px;
 }
 
@@ -105,7 +105,7 @@
   font-weight: bold;
   font-size: 18px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .account-number {
@@ -132,10 +132,6 @@
   font-size: 14px;
   margin-bottom: 5px; /* 버튼 간 간격 */
   transition: background-color 0.3s ease;
-}
-
-.kakao-pay-button:hover {
-  background-color: #ffd700;
 }
 
 .kakaoPay-icon {
