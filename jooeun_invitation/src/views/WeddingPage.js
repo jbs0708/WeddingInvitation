@@ -10,6 +10,9 @@ import Carousel from "../components/Carousel.js";
 import Account from "../components/Account.js";
 import Calendar from "../components/Calendar.js";
 import { useNavigate } from 'react-router-dom';
+import {
+  ADDRESS
+} from '../config.js';
 
 const WeddingPage = () => {
   const navigate = useNavigate();
@@ -50,8 +53,6 @@ const WeddingPage = () => {
     setCurrentImage('');
     setCurrentIndex(0);
   };
-
-  const address = "충북 진천군 용석로 184";
 
   // 토글 함수
   const toggleStory = () => {
@@ -130,7 +131,7 @@ const WeddingPage = () => {
         />
 
         <div className="our-story">
-          <h1>우리의 시작</h1>
+          {/* <h1>우리의 시작</h1> */}
           <p>
             2022년 더운 여름,<br />
             성균이와 주은이는 만났습니다<br />
@@ -149,7 +150,7 @@ const WeddingPage = () => {
         />
 
         <div className="our-story">
-          <h1>우리의 약속</h1>
+          {/* <h1>우리의 약속</h1> */}
           <p>
             겁이 많아 걱정인 성균이는<br />
             밝고 씩씩한 대장부 같은 주은이에게<br />
@@ -171,20 +172,21 @@ const WeddingPage = () => {
         />
 
         <div className="our-story">
-          <h1>우리가 경험한 하나님의 도우심</h1>
+          {/* <h1>우리가 경험한 하나님의 도우심</h1> */}
           <p>
             결혼을 준비하며<br />
             쉬운 것이 하나도 없었지만<br />
             우리는 그럴때마다<br />
             하나님 앞에서 기도하고<br />
             끊임없이 도움을 구했습니다<br />
-            그리고 그것 자체가 감사였고 기쁨이었습니다<br />
+            그리고 그것 자체가 감사였고<br />
+            기쁨이었습니다 <br />
             그러자 신기하게도 모든 일이<br />
             순조롭게 진행되었습니다<br />
             어렵게만 느껴졌던 문제들이<br />
             하나씩 해결되는 것을 경험하며<br />
             우리는 매 순간<br />
-            하나님의 섭리하심을 경험했습니다.
+            하나님의 섭리하심을 경험했습니다
           </p>
         </div>
 
@@ -195,7 +197,7 @@ const WeddingPage = () => {
         />
 
         <div className="our-story">
-          <h1>우리의 미래</h1>
+          {/* <h1>우리의 미래</h1> */}
           <p>
             앞으로도 우리는 가보지 않는 길을<br />
             걸어가야합니다<br />
@@ -215,7 +217,7 @@ const WeddingPage = () => {
         />
 
         <div className="our-story">
-          <h1>우리의 매일</h1>
+          {/* <h1>우리의 매일</h1> */}
           <p>
             앞으로, 우리에게 또 어떤 일이 일어날까요?<br />
             한치 앞도 모르는 저희지만,<br />
@@ -250,7 +252,7 @@ const WeddingPage = () => {
         <h3>충북 진천군 용석로 184</h3>
       </div>
       <CopyToClipboard 
-        text={address} 
+        text={ADDRESS} 
         onCopy={() => alert('주소가 클립보드에 복사되었습니다!')}
       >
         <button className="button">
@@ -264,9 +266,13 @@ const WeddingPage = () => {
         <div className="section-title">
           <h1>Information</h1>
         </div>
-        <p className="info-text">
+        <div className="info-title">
           마음 전하실 곳
-        </p>
+        </div>
+        <div className="info-text">
+        <p>참석이 어려우신 분들을 위해 기재하였습니다.</p>
+        <p>너그러이 양해부탁드립니다.</p>
+        </div>
       </div>
       <Account />
     </div>

@@ -2,6 +2,8 @@ export const WEDDING_INVITATION_URL = "http://localhost:3000/";
 export const KAKAOTALK_SHARE_IMAGE =
   "https://cdn.pixabay.com/photo/2014/11/13/17/04/heart-529607_960_720.jpg";
 
+export const ADDRESS = '충북 진천군 용석로 184'
+
 export const GROOM_NAME = "신랑 안성균";
 export const GROOM_ACCOUNT_NUMBER = "우리은행 1002-649-940580";
 export const GROOM_KAKAOPAY = 'https://qr.kakaopay.com/FXjb7CHoN';

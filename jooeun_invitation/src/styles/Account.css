@@ -34,13 +34,15 @@
 }
 
 .account-toggle-button.open .toggle-icon {
-  transform: rotate(180deg); /* 열렸을 때 아이콘 회전 */
+  transform: rotate(180deg);
 }
 
 .button-text {
   width: 100%;
   text-align: center;
-  z-index: 1; /* 아이콘 위에 텍스트가 표시되도록 설정 */
+  z-index: 1;
+  color: #7c7979 !important; /* ios에서 파란색으로 렌더링됨 */
+  appearance: none;
 }
 
 .toggle-icon {
@@ -61,7 +63,6 @@
   opacity: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  margin-top: 0;
 }
 
 .accounts-list.open {
