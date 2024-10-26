@@ -35,6 +35,34 @@ const WeddingPage = () => {
     setIsPlaying(!isPlaying);
   };
 
+  // 스크롤을 위한 섹션 참조 생성
+  const invitationRef = useRef(null);
+  const storyRef = useRef(null);
+  const calendarRef = useRef(null);
+  const galleryRef = useRef(null);
+  const locationRef = useRef(null);
+  const informationRef = useRef(null);
+
+  // 오프셋 값 설정 (Navbar 높이만큼 오프셋)
+  const offset = 40; // Navbar 높이 + 약간의 여유 (픽셀 단위)
+
+  // 재사용 가능한 스크롤 함수
+  const scrollToSection = (ref) => {
+    const element = ref.current;
+    if (element) {
+      const y = element.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
+  // 스크롤 함수들
+  const scrollToInvitation = () => scrollToSection(invitationRef);
+  const scrollToStory = () => scrollToSection(storyRef);
+  const scrollToCalendar = () => scrollToSection(calendarRef);
+  const scrollToGallery = () => scrollToSection(galleryRef);
+  const scrollToLocation = () => scrollToSection(locationRef);
+  const scrollToInformation = () => scrollToSection(informationRef);
+
   // 스토리 표시 상태 관리
   const [isStoryVisible, setIsStoryVisible] = useState(false);
   // 모달
@@ -67,13 +95,29 @@ const WeddingPage = () => {
     <div className="body">
       {/* 고정 Navbar */}
       <nav className="fixed-navbar">
-        <button className="play-pause-button" onClick={togglePlayPause}>
-          {isPlaying ? (
-            <img src={pause} alt="정지" style={{ width: '20px' }} />
-          ) : (
-            <img src={play} alt="재생" style={{ width: '20px' }} />
-          )}
-        </button>
+        {/* 왼쪽: 오디오 재생/정지 버튼 */}
+        <div className="navbar-left">
+          <button className="play-pause-button" onClick={togglePlayPause}>
+            {isPlaying ? (
+              <img src={pause} alt="정지" style={{ width: '20px' }} />
+            ) : (
+              <img src={play} alt="재생" style={{ width: '20px' }} />
+            )}
+          </button>
+        </div>
+
+        {/* 오른쪽: 네비게이션 버튼 */}
+        <div className="navbar-right">
+          <button className="nav-button" onClick={scrollToStory}>스토리</button>
+          <span className="separator">|</span>
+          <button className="nav-button" onClick={scrollToCalendar}>달력</button>
+          <span className="separator">|</span>
+          <button className="nav-button" onClick={scrollToGallery}>갤러리</button>
+          <span className="separator">|</span>
+          <button className="nav-button" onClick={scrollToLocation}>위치</button>
+          <span className="separator">|</span>
+          <button className="nav-button" onClick={scrollToInformation}>안내</button>
+        </div>
       </nav>
 
       {/* 오디오 요소 */}
@@ -81,14 +125,21 @@ const WeddingPage = () => {
         <source src="../../assets/music/Loverboy_cut.mp3" type="audio/mp3" />
       </audio>
 
-      {/* 기존 페이지 내용 */}
       <div className="body-top">
         <img src="../../assets/picture/weddingPic_1.jpg" alt="wedding" />
       </div>
 
-      <div className="body-middle">
+      <div className="body-middle" ref={invitationRef}>
+        <div className="section-title">
+          <h1>Invitation</h1>
+        </div>
         <div className="main-word">
-          <h1>초대합니다</h1>
+          <h4>안성균ㆍ김주은</h4>
+          <div className="location">
+            <h4>2024. 12. 28 토요일 오전 11시</h4>
+            <h4>충북 진천 울림교회 예배당</h4>
+          </div>
+          <br />
           <p>
             문과감성충만 이과생과 <br />
             이과감성가득 문과생이 <br />
@@ -101,26 +152,8 @@ const WeddingPage = () => {
         </div>
       </div>
 
-      <div className="body-footer">
-        <div className="row2">
-          <span className="parents">안경훈</span>
-          <span className="bulit">・</span>
-          <span className="parents">정명희</span>
-          <p>의 아들</p>
-          <span className="groom">성균</span>
-        </div>
-
-        <div className="row1">
-          <span className="parents">김&nbsp;&nbsp;&nbsp;인</span>
-          <span className="bulit">・</span>
-          <span className="parents">김은진</span>
-          <p>의 &nbsp;딸&nbsp;</p>
-          <span className="groom">주은</span>
-        </div>
-      </div>
-
       {/* 스토리 섹션 */}
-      <div className="our-story-section">
+      <div className="our-story-section" ref={storyRef}>
         <div className="section-title">
           <h1>Our Story</h1>
         </div>
@@ -230,39 +263,38 @@ const WeddingPage = () => {
         </div>
       </div>
 
-      {/* 달력 */}
-      <div className="section-title">
+      {/* 달력 섹션 */}
+      <div className="section-title" ref={calendarRef}>
         <h1>Calendar</h1>
       </div>
       <Calendar />
 
-      {/* 갤러리 */}
-      <div className="section-title">
+      {/* 갤러리 섹션 */}
+      <div className="section-title" ref={galleryRef}>
         <h1>Gallery</h1>
       </div>
       <Carousel />
 
       {/* 지도 부분 */}
-      <div className="section-title">
+      <div className="section-title" ref={locationRef}>
         <h1>Location</h1>
       </div>
       <KakaoMap />
       <div className="address">
-        <h3>울림교회 예배당</h3>
-        <h3>충북 진천군 용석로 184</h3>
+        <h4>울림교회 예배당</h4>
+        <h4>충북 진천군 용석로 184</h4>
       </div>
       <CopyToClipboard 
         text={ADDRESS} 
-        onCopy={() => alert('주소가 클립보드에 복사되었습니다!')}
       >
         <button className="button">
-          <img src={copy} alt="icon" style={{ width: '20px', marginRight: '8px' }} />
-          복사하기
+          <img src={copy} alt="icon" style={{ width: '14px', marginRight: '5px' }} />
+          주소 복사
         </button>
       </CopyToClipboard>
 
-      {/* 마음 전하실 곳 */}
-      <div className="account-Box">
+      {/* 마음 전하실 곳 섹션 */}
+      <div className="account-Box" ref={informationRef}>
         <div className="section-title">
           <h1>Information</h1>
         </div>
@@ -270,8 +302,8 @@ const WeddingPage = () => {
           마음 전하실 곳
         </div>
         <div className="info-text">
-        <p>참석이 어려우신 분들을 위해 기재하였습니다.</p>
-        <p>너그러이 양해부탁드립니다.</p>
+          <p>참석이 어려우신 분들을 위해 기재하였습니다.</p>
+          <p>너그러이 양해부탁드립니다.</p>
         </div>
       </div>
       <Account />

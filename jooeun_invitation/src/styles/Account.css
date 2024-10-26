@@ -41,7 +41,7 @@
   width: 100%;
   text-align: center;
   z-index: 1;
-  color: #7c7979 !important; /* ios에서 파란색으로 렌더링됨 */
+  color: #424242 !important; /* ios에서 파란색으로 렌더링됨 */
   appearance: none;
 }
 
@@ -99,18 +99,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .account-name {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   margin-top: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 22px;
 }
 
 .account-number {
-  font-size: 16px;
+  font-size: 14px;
   color: #000000;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .kakao-pay-button {
-  background-color: #fee500;
+  background-color: #FFEB00; 
   border: none;
   border-radius: 4px;
   color: #3c1e1e;
@@ -151,6 +151,7 @@
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  color: #424242 !important;
 }
 
 .copy-button:hover {

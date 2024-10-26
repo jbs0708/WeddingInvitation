@@ -3,27 +3,15 @@ html {
 }
 
 @font-face {
-    font-family: "NanumSquareRoundB";
-    font-weight: normal;
-    src: url("../fonts/NanumSquareRoundB.ttf") format("truetype");
-}
-
-@font-face {
     font-family: "Golden Plains";
     font-weight: normal;
     src: url("../fonts/Golden Plains.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "MaruBuri-Bold";
+    font-family: "NanumSquareRoundB";
     font-weight: normal;
-    src: url("../fonts/MaruBuri-Bold.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "MaruBuri-SemiBold";
-    font-weight: normal;
-    src: url("../fonts/MaruBuri-SemiBold.ttf") format("truetype");
+    src: url("../fonts/NanumSquareRoundB.ttf") format("truetype");
 }
 
 /* 고정 Navbar 스타일 */
@@ -36,10 +24,32 @@ html {
     background-color: rgba(255, 255, 255, 0.8); /* 흰색 반투명 */
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    justify-content: space-between; /* 좌우 정렬 */
+    padding: 0 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000; /* 다른 요소들보다 위에 표시되도록 */
 }
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    color: #333333; /* 원하는 색상으로 변경 가능 */
+    font-family: 'NanumSquareRoundB';
+}
+
+.separator {
+    color: #c1c1c1; /* 구분자 색상 */
+    margin: 0 5px;
+}
+
 
 /* 재생/정지 버튼 스타일 */
 .play-pause-button {
@@ -52,6 +62,7 @@ body {
     margin: 0 auto;
     padding: 0;
     overflow-x: hidden;
+    max-width: 800px;
 }
 
 ::-webkit-scrollbar {
@@ -106,27 +117,25 @@ body {
 }
 
 .body-middle {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 800px;
-    padding: 20px;
-    display: flex;
+    padding: 0 20px;
     justify-content: center;
+    align-items: center;
+}
+
+.location {
+    margin-top: 30px;
+    line-height: 0.8;
 }
 
 
 .main-word {
     width: 100%;
-    padding: 10px;
     text-align: center;
     font-family: 'NanumSquareRoundB';
-}
-
-.main-word h1 {
-    font-family: 'NanumSquareRoundB';
-    color: black;
-    font-size: 28px;
-    letter-spacing: 10px;
-    margin-bottom: 30px;
 }
 
 .main-word p {
@@ -140,10 +149,10 @@ body {
 
 .body-footer {
     font-family: 'NanumSquareRoundB';
-    margin: 0 auto;
+    margin: 30px auto 0 auto;
     width: 100%;
     max-width: 800px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 .row1, .row2 {
@@ -209,12 +218,12 @@ body {
 }
 
 .our-story p {
-    font-family: 'MaruBuri-SemiBold';
+    font-family: 'NanumSquareRoundB';
     color: #282828;
     font-size: 0.8rem;
     letter-spacing: 4px;
     margin: 10px 0;
-    line-height: 1.7;
+    line-height: 2.2;
     font-weight: 400;
 }
 
@@ -257,12 +266,12 @@ body {
 
 .account-Box .info-title {
     margin-top: 20px;
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'NanumSquareRoundB';
 }
 
 .account-Box .info-text {
-    margin-top: 20px;
+    margin-top: 10px;
     text-align: center;
     font-size: 16px;
     font-family: 'NanumSquareRoundB';
@@ -272,6 +281,10 @@ body {
     width: 90%;
     text-align: center;
     line-height: 0.7;
+}
+
+.address h4 {
+    margin-top: 20px;
     font-family: 'NanumSquareRoundB';
 }
 
@@ -280,15 +293,15 @@ body {
     align-items: center;
     justify-content: center;
     margin: 5px auto 30px auto;
-    padding: 10px 10px;
+    padding: 8px 8px;
     background: none;
     border:#c1c1c1 1px solid;
     cursor: pointer;
     position: relative;
-    font-size: 16px;
+    font-size: 12px;
     background-color: rgb(250, 250, 250);
     border-radius: 5px;
-    color: #7c7979 !important; /* ios에서 파란색으로 렌더링됨 */
+    color: #424242 !important; /* ios에서 파란색으로 렌더링됨 */
     appearance: none;
 }
 

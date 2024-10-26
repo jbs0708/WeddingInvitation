@@ -21,6 +21,32 @@ const Carousel = () => {
     }
   };
 
+  // 이전 슬라이드로 이동
+  const handlePrev = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
+  // 다음 슬라이드로 이동
+  const handleNext = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
+  // 이미지 클릭 시 위치에 따라 슬라이드 이동
+  const handleImageClick = (e) => {
+    const { left, width } = e.target.getBoundingClientRect();
+    const clickX = e.clientX - left;
+
+    if (clickX < width / 2) {
+      handlePrev();
+    } else {
+      handleNext();
+    }
+  };
+
   return (
     <div className="carousel-container">
       {/* 메인 캐러셀 */}
@@ -32,7 +58,6 @@ const Carousel = () => {
         centeredSlides={true}
         initialSlide={1}
         // autoplay={{ delay: 2500, disableOnInteraction: false }}
-        // autoHeight={true}
         className="mySwiper mainSwiper"
         onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
       >
@@ -44,6 +69,7 @@ const Carousel = () => {
                 alt={`Wedding Pic ${index + 1}`}
                 className="carousel-image"
                 loading="lazy"
+                onClick={handleImageClick} // 클릭 핸들러 추가
               />
             </div>
           </SwiperSlide>

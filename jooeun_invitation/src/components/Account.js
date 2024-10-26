@@ -1,6 +1,6 @@
 // Account.js
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import '../styles/Account.css';
 import {
   GROOM_NAME,
@@ -83,7 +83,7 @@ const Account = () => {
         >
           <span className="button-text">신랑측 계좌 안내</span>
           <img
-            src={isGroomOpen=='open' ? up : down}
+            src={isGroomOpen ? up : down}
             alt="toggle"
             className="toggle-icon"
           />
@@ -98,13 +98,15 @@ const Account = () => {
               </div>
               {/* 두 번째 div: 카카오페이 버튼과 복사 버튼 */}
               <div className="account-actions">
-                <button
-                  type="button" // 버튼 타입 명시
-                  className="kakao-pay-button"
-                  onClick={() => handleKakaoPay(account.kakaoPay)}
-                >
-                  <img src={kakaoPay} alt="카카오페이" className="kakaoPay-icon" />
-                </button>
+                {account.kakaoPay.trim() !== "" && (
+                  <button
+                    type="button" // 버튼 타입 명시
+                    className="kakao-pay-button"
+                    onClick={() => handleKakaoPay(account.kakaoPay)}
+                  >
+                    <img src={kakaoPay} alt="카카오페이" className="kakaoPay-icon" />
+                  </button>
+                )}
                 <CopyToClipboard text={account.accountNumber} onCopy={handleCopy}>
                   <button type="button" className="copy-button">
                     <img src={copyIcon} alt="복사" className="copy-icon" />
@@ -127,7 +129,7 @@ const Account = () => {
         >
           <span className="button-text">신부측 계좌 안내</span>
           <img
-            src={isBrideOpen=='open' ? up : down}
+            src={isBrideOpen ? up : down}
             alt="toggle"
             className="toggle-icon"
           />
@@ -142,13 +144,15 @@ const Account = () => {
               </div>
               {/* 두 번째 div: 카카오페이 버튼과 복사 버튼 */}
               <div className="account-actions">
-                <button
-                  type="button" // 버튼 타입 명시
-                  className="kakao-pay-button"
-                  onClick={() => handleKakaoPay(account.kakaoPay)}
-                >
-                  <img src={kakaoPay} alt="카카오페이" className="kakaoPay-icon" />
-                </button>
+                {account.kakaoPay.trim() !== "" && (
+                  <button
+                    type="button" // 버튼 타입 명시
+                    className="kakao-pay-button"
+                    onClick={() => handleKakaoPay(account.kakaoPay)}
+                  >
+                    <img src={kakaoPay} alt="카카오페이" className="kakaoPay-icon" />
+                  </button>
+                )}
                 <CopyToClipboard text={account.accountNumber} onCopy={handleCopy}>
                   <button type="button" className="copy-button">
                     <img src={copyIcon} alt="복사" className="copy-icon" />
