@@ -20,11 +20,11 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px; /* 원하는 높이로 조절 가능 */
-    background-color: rgba(255, 255, 255, 0.8); /* 흰색 반투명 */
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     align-items: center;
-    justify-content: space-between; /* 좌우 정렬 */
+    justify-content: space-between;
     padding: 0 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000; /* 다른 요소들보다 위에 표시되도록 */
@@ -41,12 +41,13 @@ html {
     border: none;
     font-size: 12px;
     cursor: pointer;
-    color: #333333; /* 원하는 색상으로 변경 가능 */
+    color: #333333;
     font-family: 'NanumSquareRoundB';
+    white-space: nowrap;
 }
 
 .separator {
-    color: #c1c1c1; /* 구분자 색상 */
+    color: #c1c1c1;
     margin: 0 5px;
 }
 
@@ -83,7 +84,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 50px; /* 하단 여백 추가 */
+    /* padding-bottom: 50px; */
     overflow-x: hidden;
     padding-top: 1px;
 }

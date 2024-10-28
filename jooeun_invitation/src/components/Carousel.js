@@ -56,7 +56,7 @@ const Carousel = () => {
         spaceBetween={10}
         slidesPerView={1}
         centeredSlides={true}
-        initialSlide={1}
+        initialSlide={0}
         // autoplay={{ delay: 2500, disableOnInteraction: false }}
         className="mySwiper mainSwiper"
         onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
@@ -70,6 +70,8 @@ const Carousel = () => {
                 className="carousel-image"
                 loading="lazy"
                 onClick={handleImageClick} // 클릭 핸들러 추가
+                onContextMenu={(e) => e.preventDefault()} // 오른쪽 클릭 비활성화
+                draggable="false" // 드래그 방지
               />
             </div>
           </SwiperSlide>

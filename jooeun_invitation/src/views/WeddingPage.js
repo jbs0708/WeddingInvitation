@@ -9,6 +9,7 @@ import pause from "../svg/pause.svg";
 import Carousel from "../components/Carousel.js";
 import Account from "../components/Account.js";
 import Calendar from "../components/Calendar.js";
+import KakaoShare from "../components/KakaoShare.js";
 import { useNavigate } from 'react-router-dom';
 import {
   ADDRESS
@@ -307,6 +308,9 @@ const WeddingPage = () => {
         </div>
       </div>
       <Account />
+
+      {/* 카카오톡 공유하기 */}
+      <KakaoShare />
     </div>
   );
 };

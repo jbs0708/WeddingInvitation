@@ -83,7 +83,7 @@ const Account = () => {
         >
           <span className="button-text">신랑측 계좌 안내</span>
           <img
-            src={isGroomOpen ? up : down}
+            src={down}
             alt="toggle"
             className="toggle-icon"
           />
@@ -129,7 +129,7 @@ const Account = () => {
         >
           <span className="button-text">신부측 계좌 안내</span>
           <img
-            src={isBrideOpen ? up : down}
+            src={down}
             alt="toggle"
             className="toggle-icon"
           />
