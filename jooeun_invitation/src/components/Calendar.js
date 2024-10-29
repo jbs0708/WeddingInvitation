@@ -3,7 +3,7 @@ import '../styles/Calendar.css';
 import heartIcon from '../svg/heart.svg';
 
 const Calendar = () => {
-  const weddingDate = new Date('2024-12-28T11:00:00+09:00'); // KST 시간 기준
+  const weddingDate = new Date('2024-12-28T00:00:00+09:00'); // KST 시간 기준
   const today = new Date();
   const daysLeft = Math.ceil((weddingDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
   const days = ['일', '월', '화', '수', '목', '금', '토'];

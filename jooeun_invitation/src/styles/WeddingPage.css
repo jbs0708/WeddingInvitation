@@ -48,8 +48,9 @@ html {
     font-size: 12px;
     cursor: pointer;
     color: #333333;
-    font-family: 'NanumGothic';
+    font-family: 'Arial';
     white-space: nowrap;
+    font-weight: 700;
 }
 
 .separator {
@@ -117,7 +118,7 @@ body {
 }
 
 .date h1 {
-    font-family: 'NanumSquareRoundB';
+    font-family: 'Arial';
     font-size: 1.5rem;
     color: black;
     font-weight: bold;
@@ -142,20 +143,21 @@ body {
 .main-word {
     width: 100%;
     text-align: center;
-    font-family: 'NanumSquareRoundB';
+    font-family: 'Arial';
 }
 
 .main-word p {
-    font-family: 'NanumSquareRoundB';
+    font-family: 'Arial';
     color: #282828;
     font-size: 0.9rem;
     letter-spacing: 4px;
     line-height: 30px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .body-footer {
-    font-family: 'NanumSquareRoundB';
+    font-family: 'Arial';
+    font-weight: 500;
     margin: 30px auto 0 auto;
     width: 100%;
     max-width: 800px;
@@ -217,7 +219,7 @@ body {
 }
 
 .our-story h1 {
-    font-family: 'NanumGothic';
+    font-family: 'Arial';
     margin-top: 20px;
     font-size: 1.3rem;
     letter-spacing: 4px;
@@ -225,13 +227,13 @@ body {
 }
 
 .our-story p {
-    font-family: 'NanumGothic';
+    font-family: 'Arial';
     color: #282828;
     font-size: 0.8rem;
     letter-spacing: 4px;
     margin: 10px 0;
     line-height: 2.2;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 /* toggle button */
@@ -272,16 +274,18 @@ body {
 }
 
 .account-Box .info-title {
-    margin-top: 20px;
-    font-size: 20px;
-    font-family: 'NanumGothic';
+    margin: 25px 0;
+    font-size: 18px;
+    font-family: 'Arial';
+    font-weight: 500;
 }
 
 .account-Box .info-text {
     margin-top: 10px;
     text-align: center;
-    font-size: 16px;
-    font-family: 'NanumGothic';
+    font-size: 15px;
+    font-family: 'Arial';
+    font-weight: 500;
 }
 
 .address {
@@ -292,7 +296,7 @@ body {
 
 .address h4 {
     margin-top: 20px;
-    font-family: 'NanumGothic';
+    font-family: 'Arial';
 }
 
 .button {

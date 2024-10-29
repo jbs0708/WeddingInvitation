@@ -23,17 +23,18 @@ function KakaoShare() {
     <button
       onClick={kakoShare}
       style={{
-        display: 'flex', // Flexbox 사용
-        alignItems: 'center', // 수직 중앙 정렬
-        justifyContent: 'center', // 수평 중앙 정렬 (필요시)
-        width: '100%',
-        backgroundColor: '#FFEB3B', // 잘못된 ## 수정
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '90%',
+        backgroundColor: '#f7f7f7',
+        border: '1px solid #ccc',
         textAlign: 'center',
-        border: 'none',
         padding: '10px',
         fontSize: '16px',
         marginTop: '60px',
-        cursor: 'pointer', // 버튼 클릭 시 커서 변경 (선택 사항)
+        marginBottom: '20px',
+        borderRadius: '10px',
       }}
     >
       <img
