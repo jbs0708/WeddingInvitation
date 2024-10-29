@@ -14,6 +14,12 @@ html {
     src: url("../fonts/NanumSquareRoundB.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "NanumGothic";
+    font-weight: normal;
+    src: url("../fonts/NanumGothic.ttf") format("truetype");
+}
+
 /* 고정 Navbar 스타일 */
 .fixed-navbar {
     position: fixed;
@@ -42,7 +48,7 @@ html {
     font-size: 12px;
     cursor: pointer;
     color: #333333;
-    font-family: 'NanumSquareRoundB';
+    font-family: 'NanumGothic';
     white-space: nowrap;
 }
 
@@ -211,7 +217,7 @@ body {
 }
 
 .our-story h1 {
-    font-family: 'NanumSquareRoundB';
+    font-family: 'NanumGothic';
     margin-top: 20px;
     font-size: 1.3rem;
     letter-spacing: 4px;
@@ -219,7 +225,7 @@ body {
 }
 
 .our-story p {
-    font-family: 'NanumSquareRoundB';
+    font-family: 'NanumGothic';
     color: #282828;
     font-size: 0.8rem;
     letter-spacing: 4px;
@@ -268,14 +274,14 @@ body {
 .account-Box .info-title {
     margin-top: 20px;
     font-size: 20px;
-    font-family: 'NanumSquareRoundB';
+    font-family: 'NanumGothic';
 }
 
 .account-Box .info-text {
     margin-top: 10px;
     text-align: center;
     font-size: 16px;
-    font-family: 'NanumSquareRoundB';
+    font-family: 'NanumGothic';
 }
 
 .address {
@@ -286,7 +292,7 @@ body {
 
 .address h4 {
     margin-top: 20px;
-    font-family: 'NanumSquareRoundB';
+    font-family: 'NanumGothic';
 }
 
 .button {
