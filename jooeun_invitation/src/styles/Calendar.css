@@ -4,6 +4,12 @@
   src: url("../fonts/NanumSquareRoundB.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "MaruBuri";
+  font-weight: normal;
+  src: url("../fonts/MaruBuri.ttf") format("truetype");
+}
+
 .calendar-container {
   text-align: center;
   font-family: Arial;
@@ -14,7 +20,9 @@
 }
 
 .calendar-container .date h3 {
-  line-height: 0.7;
+  line-height: 0.8;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 .calendar-header, .calendar-grid {

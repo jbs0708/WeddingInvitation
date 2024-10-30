@@ -153,6 +153,23 @@ const WeddingPage = () => {
         </div>
       </div>
 
+      <div className="body-footer">
+        <div className="row2">
+          <span className="parents">안경훈</span>
+          <span className="bulit">・</span>
+          <span className="parents">정명희</span>
+          <p>의 아들</p>
+          <span className="groom">성균</span>
+        </div>
+        <div className="row1">
+          <span className="parents">김&nbsp;&nbsp;&nbsp;인</span>
+          <span className="bulit">・</span>
+          <span className="parents">김은진</span>
+          <p>의 &nbsp;딸&nbsp;</p>
+          <span className="groom">주은</span>
+        </div>
+      </div>
+
       {/* 스토리 섹션 */}
       <div className="our-story-section" ref={storyRef}>
         <div className="section-title">

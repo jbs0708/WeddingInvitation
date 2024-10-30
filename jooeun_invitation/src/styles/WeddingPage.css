@@ -1,6 +1,7 @@
 html { 
     -webkit-text-size-adjust: none; 
 }
+/* Arial */
 
 @font-face {
     font-family: "Golden Plains";
@@ -19,6 +20,13 @@ html {
     font-weight: normal;
     src: url("../fonts/NanumGothic.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "MaruBuri";
+    font-weight: normal;
+    src: url("../fonts/MaruBuri.ttf") format("truetype");
+}
+
 
 /* 고정 Navbar 스타일 */
 .fixed-navbar {
@@ -48,7 +56,7 @@ html {
     font-size: 12px;
     cursor: pointer;
     color: #333333;
-    font-family: 'Arial';
+    font-family: 'MaruBuri';
     white-space: nowrap;
     font-weight: 700;
 }
@@ -118,7 +126,7 @@ body {
 }
 
 .date h1 {
-    font-family: 'Arial';
+    font-family: 'MaruBuri';
     font-size: 1.5rem;
     color: black;
     font-weight: bold;
@@ -143,11 +151,11 @@ body {
 .main-word {
     width: 100%;
     text-align: center;
-    font-family: 'Arial';
+    font-family: 'MaruBuri';
 }
 
 .main-word p {
-    font-family: 'Arial';
+    font-family: 'MaruBuri';
     color: #282828;
     font-size: 0.9rem;
     letter-spacing: 5px;
@@ -156,7 +164,7 @@ body {
 }
 
 .body-footer {
-    font-family: 'Arial';
+    font-family: 'MaruBuri';
     font-weight: 500;
     margin: 30px auto 0 auto;
     width: 100%;
@@ -219,7 +227,7 @@ body {
 }
 
 .our-story h1 {
-    font-family: 'Arial';
+    font-family: 'MaruBuri';
     margin-top: 20px;
     font-size: 1.3rem;
     letter-spacing: 4px;
@@ -227,7 +235,7 @@ body {
 }
 
 .our-story p {
-    font-family: 'Arial';
+    font-family: 'MaruBuri';
     color: #282828;
     font-size: 0.9rem;
     letter-spacing: 4px;
@@ -276,7 +284,7 @@ body {
 .account-Box .info-title {
     margin: 25px 0;
     font-size: 18px;
-    font-family: 'Arial';
+    font-family: 'MaruBuri';
     font-weight: 500;
 }
 
@@ -284,7 +292,7 @@ body {
     margin-top: 10px;
     text-align: center;
     font-size: 15px;
-    font-family: 'Arial';
+    font-family: 'MaruBuri';
     font-weight: 500;
 }
 
@@ -296,7 +304,7 @@ body {
 
 .address h4 {
     margin-top: 20px;
-    font-family: 'Arial';
+    font-family: 'MaruBuri';
 }
 
 .button {
