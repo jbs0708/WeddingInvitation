@@ -150,8 +150,8 @@ body {
     font-family: 'Arial';
     color: #282828;
     font-size: 0.9rem;
-    letter-spacing: 4px;
-    line-height: 30px;
+    letter-spacing: 5px;
+    line-height: 2.2;
     font-weight: 500;
 }
 
@@ -229,7 +229,7 @@ body {
 .our-story p {
     font-family: 'Arial';
     color: #282828;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: 4px;
     margin: 10px 0;
     line-height: 2.2;
