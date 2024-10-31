@@ -49,8 +49,8 @@ const Calendar = () => {
   return (
     <div className="calendar-container">
       <div className='date'>
-        <h3>{`2024년 12월 28일`}</h3>
-        <h3>{`토요일 오전 11시`}</h3>
+        <p>{`2024년 12월 28일`}</p>
+        <p>{`토요일 오전 11시`}</p>
       </div>
       <div className="calendar-header">
         {days.map((day, index) => (

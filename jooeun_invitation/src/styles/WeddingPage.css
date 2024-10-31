@@ -158,7 +158,7 @@ body {
     font-family: 'MaruBuri';
     color: #282828;
     font-size: 0.9rem;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     line-height: 2.2;
     font-weight: 500;
 }
@@ -238,7 +238,7 @@ body {
     font-family: 'MaruBuri';
     color: #282828;
     font-size: 0.9rem;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     margin: 10px 0;
     line-height: 2.2;
     font-weight: 500;
@@ -307,11 +307,17 @@ body {
     font-family: 'MaruBuri';
 }
 
-.button {
+.address p {
+    margin-top: 15px;
+    font-family: 'MaruBuri';
+    font-size: 14px;
+}
+
+.address-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 5px auto 30px auto;
+    margin: 30px auto 50px auto;
     padding: 8px 8px;
     background: none;
     border:#c1c1c1 1px solid;

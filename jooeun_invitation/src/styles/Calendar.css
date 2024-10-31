@@ -19,10 +19,9 @@
   margin-bottom: 40px;
 }
 
-.calendar-container .date h3 {
+.calendar-container .date p {
   line-height: 0.8;
-  font-weight: 400;
-  font-size: 18px;
+  font-family: 'NanumSquareRoundB';
 }
 
 .calendar-header, .calendar-grid {

@@ -138,7 +138,7 @@ const WeddingPage = () => {
           <h4>안성균ㆍ김주은</h4>
           <div className="location">
             <h4>2024. 12. 28 토요일 오전 11시</h4>
-            <h4>충북 진천 울림교회 예배당</h4>
+            <h4>울림교회 예배당</h4>
           </div>
           <br />
           <p>
@@ -301,15 +301,22 @@ const WeddingPage = () => {
       <div className="address">
         <h4>울림교회 예배당</h4>
         <h4>충북 진천군 용석로 184</h4>
+        <CopyToClipboard 
+          text={ADDRESS} 
+          >
+          <button className="address-button">
+            <img src={copy} alt="icon" style={{ width: '14px', marginRight: '5px' }} />
+            주소 복사
+          </button>
+        </CopyToClipboard>
+
+        <h4>주차안내</h4>
+        <p>교회 주차 공간이 협소하여</p>
+        <p>식장 주변 빈 공간에 주차하시기 바랍니다</p>
+        <p>주차장 이용에 불편을 드려 죄송합니다</p>
       </div>
-      <CopyToClipboard 
-        text={ADDRESS} 
-      >
-        <button className="button">
-          <img src={copy} alt="icon" style={{ width: '14px', marginRight: '5px' }} />
-          주소 복사
-        </button>
-      </CopyToClipboard>
+      
+
 
       {/* 마음 전하실 곳 섹션 */}
       <div className="account-Box" ref={informationRef}>
