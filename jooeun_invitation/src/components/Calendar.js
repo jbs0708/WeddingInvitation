@@ -46,6 +46,34 @@ const Calendar = () => {
     return calendarDays;
   };
 
+  // 메시지를 조건에 따라 설정
+  const renderMessage = () => {
+    if (daysLeft > 0) {
+      return (
+        <>
+          성균 <img src={heartIcon} alt="heart" style={{ width: '20px', height: '16px' }} /> 주은의 결혼식이{' '}
+          <span style={{ color: '#D08C95', fontWeight: 'bold' }}>{daysLeft}</span>일 남았습니다.
+        </>
+      );
+    } else if (daysLeft === 0) {
+      return (
+        <>
+          🎉 성균 <img src={heartIcon} alt="heart" style={{ width: '20px', height: '16px' }} /> 주은의 결혼식날입니다! 
+          결혼을 축하해주세요! 🎉
+        </>
+      );
+    } else {
+      const daysSinceWedding = Math.abs(daysLeft);
+      return (
+        <>
+          성균 <img src={heartIcon} alt="heart" style={{ width: '20px', height: '16px' }} /> 주은이
+          결혼한지 <span style={{ color: '#D08C95', fontWeight: 'bold' }}>{daysSinceWedding}</span>일째
+          입니다.
+        </>
+      );
+    }
+  };
+
   return (
     <div className="calendar-container">
       <div className='date'>
@@ -66,9 +94,7 @@ const Calendar = () => {
       </div>
       <div className="calendar-grid">{renderCalendar()}</div>
       <div className="d-day">
-        <p>
-          성균 <img src={heartIcon} alt="heart" style={{ width: '20px', height: '16px' }} /> 주은의 결혼식이 <span style={{ color: '#D08C95', fontWeight: 'bold' }}> {daysLeft}</span>일 남았습니다.
-        </p>
+        <p>{renderMessage()}</p>
       </div>
     </div>
   );
