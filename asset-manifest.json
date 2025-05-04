@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/WeddingInvitation/static/css/main.334bffe4.css",
-    "main.js": "/WeddingInvitation/static/js/main.db0cb139.js",
+    "main.js": "/WeddingInvitation/static/js/main.9f7d36dc.js",
     "static/media/MaruBuri.ttf": "/WeddingInvitation/static/media/MaruBuri.5a21263786cb0e2d0481.ttf",
     "static/media/NanumGothic.ttf": "/WeddingInvitation/static/media/NanumGothic.46c03af3832f3527bd51.ttf",
     "static/media/NanumSquareRoundB.ttf": "/WeddingInvitation/static/media/NanumSquareRoundB.8ab117fc37409bd022e5.ttf",
@@ -16,10 +16,10 @@
     "static/media/down.svg": "/WeddingInvitation/static/media/down.5d592df8068fd4c3c653bc7bc42ddf50.svg",
     "static/media/play.svg": "/WeddingInvitation/static/media/play.1b21e30c572895a7855884585870a88f.svg",
     "main.334bffe4.css.map": "/WeddingInvitation/static/css/main.334bffe4.css.map",
-    "main.db0cb139.js.map": "/WeddingInvitation/static/js/main.db0cb139.js.map"
+    "main.9f7d36dc.js.map": "/WeddingInvitation/static/js/main.9f7d36dc.js.map"
   },
   "entrypoints": [
     "static/css/main.334bffe4.css",
-    "static/js/main.db0cb139.js"
+    "static/js/main.9f7d36dc.js"
   ]
 }
